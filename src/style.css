@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "PublicSans-Regular";
+  font-weight: 300;
+  src: url("./assets/PublicSans-Regular.woff");
+}
+
+@font-face {
+  font-family: "PublicSans-Bold";
+  font-weight: 300;
+  src: url("./assets/PublicSans-Bold.otf");
+}
+
+@font-face {
+  font-family: "PublicSans-SemiBold";
+  font-weight: 300;
+  src: url("./assets/PublicSans-SemiBold.woff");
+}
+
+@font-face {
+  font-family: "PublicSans-Light";
+  font-weight: 300;
+  src: url("./assets/PublicSans-Light.otf");
+}
+
+@font-face {
+  font-family: "PublicSans-ExtraLight";
+  font-weight: 300;
+  src: url("./assets/PublicSans-ExtraLight.woff");
+}
