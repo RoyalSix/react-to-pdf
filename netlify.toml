@@ -1,5 +1,5 @@
 [build]
-  functions = "functions"
+  functions = "functions_build"
 
 [build.environment]
   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1"
