@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts buildn && yarn compile",
+    "build": "react-scripts build && yarn compile",
     "compile": "babel functions -d functions_build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
