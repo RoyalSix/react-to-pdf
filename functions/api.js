@@ -1,8 +1,10 @@
 import puppeteer from "puppeteer";
 import delay from 'buffer';
+import { getChrome } from "./helpers";
+
 
 exports.handler = async function (event, context) {
-  const body = JSON.parse(event.body)
+  const body = JSON.parse(event.body);
   const { url } = body;
   if (!url) {
     return {
@@ -10,9 +12,14 @@ exports.handler = async function (event, context) {
       body: 'No URL specified'
     }
   }
+  const chrome = await getChrome();
+  console.log("Got Chrome");
   const pageUrl = encodeURI(url);
   console.log("Got page url as", pageUrl);
-  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  // const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: chrome.endpoint
+  });
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(0);
   await page.goto(pageUrl, { printBackground: true });
