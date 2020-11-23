@@ -2,6 +2,8 @@ import delay from 'delay';
 const chromium = require('chrome-aws-lambda');
 
 exports.handler = async function (event, context) {
+  console.info("EVENT\n" + JSON.stringify(event, null, 2))
+  console.info("CONTEXT\n" + JSON.stringify(context, null, 2))
   const body = JSON.parse(event.body);
   const {
     url
