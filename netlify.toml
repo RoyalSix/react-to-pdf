@@ -1,8 +1,5 @@
 [build]
   functions = "functions_build"
-
-[build.environment]
-   = "1"
   
 [[redirects]]
   from = "/api"
