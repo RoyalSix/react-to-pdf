@@ -43,9 +43,10 @@ exports.handler = async function (event, context) {
   return {
     statusCode: 200,
     headers: {
-      'Content-type': 'application/pdf'
+      'Content-type': 'application/pdf',
+      'Access-Control-Allow-Origin': '*'
     },
     body: pdf.toString('base64'),
-    isBase64Encoded: true
+    isBase64Encoded: true,
   };
 };
