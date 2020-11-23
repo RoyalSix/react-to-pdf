@@ -2,7 +2,7 @@
   functions = "functions"
 
 [build.environment]
-  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = 1
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1"
   
 [[redirects]]
   from = "/api"
