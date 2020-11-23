@@ -2,5 +2,5 @@
   functions = "functions"
 
 [[redirects]]
-  from = "/api*"
-  to = "/.netlify/functions/api*"
+  from = "/api"
+  to = "/.netlify/functions/api"
