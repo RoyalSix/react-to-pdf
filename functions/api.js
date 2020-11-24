@@ -1,5 +1,14 @@
 import delay from 'delay';
 const chromium = require('chrome-aws-lambda');
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+function sendTwilioMessage(body, to = '+19515146732') {
+  return client.messages.create({
+    body, from: '+14086178769', to,
+  });
+}
 
 exports.handler = async function (event, context) {
   console.info("EVENT\n" + JSON.stringify(event, null, 2))
@@ -40,6 +49,7 @@ exports.handler = async function (event, context) {
   });
   console.log("Generated pdf", pdf.length);
   await browser.close();
+  await sendTwilioMessage(`Sent a PDF from ${pageUrl}`);
   return {
     statusCode: 200,
     headers: {
